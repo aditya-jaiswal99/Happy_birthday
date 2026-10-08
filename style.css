@@ -23,6 +23,11 @@ body {
     overflow-y: auto;
 }
 
+
+/* =========================
+   WELCOME PAGE
+========================= */
+
 .welcome {
     width: 90%;
     max-width: 650px;
@@ -47,26 +52,35 @@ body {
     animation: appear 1.5s ease;
 }
 
+
 .small-text {
     font-size: 18px;
     margin-bottom: 18px;
     opacity: 0.9;
 }
 
+
 h1 {
     font-size: 55px;
     margin-bottom: 20px;
 }
 
+
 h1 span {
     color: #fff0f7;
 }
+
 
 .message {
     font-size: 18px;
     line-height: 1.7;
     margin-bottom: 30px;
 }
+
+
+/* =========================
+   GENERAL BUTTON
+========================= */
 
 button {
     border: none;
@@ -83,10 +97,12 @@ button {
 
     cursor: pointer;
 
-    box-shadow: 0 8px 25px rgba(100, 0, 50, 0.3);
+    box-shadow:
+        0 8px 25px rgba(100, 0, 50, 0.3);
 
     transition: 0.3s;
 }
+
 
 button:hover {
     transform: scale(1.08);
@@ -95,7 +111,10 @@ button:hover {
         0 10px 35px rgba(255, 255, 255, 0.5);
 }
 
-/* Floating Hearts */
+
+/* =========================
+   FLOATING HEARTS
+========================= */
 
 .hearts span {
     position: absolute;
@@ -107,7 +126,10 @@ button:hover {
     animation: float 8s linear infinite;
 
     opacity: 0.7;
+
+    pointer-events: none;
 }
+
 
 .hearts span:nth-child(1) {
     left: 10%;
@@ -139,6 +161,7 @@ button:hover {
     animation-delay: 5s;
 }
 
+
 @keyframes float {
 
     0% {
@@ -151,40 +174,34 @@ button:hover {
     }
 
     100% {
-        transform: translateY(-110vh) scale(1.5) rotate(20deg);
+        transform:
+            translateY(-110vh)
+            scale(1.5)
+            rotate(20deg);
+
         opacity: 0;
     }
 }
+
 
 @keyframes appear {
 
     from {
         opacity: 0;
-        transform: translateY(30px) scale(0.95);
+        transform:
+            translateY(30px)
+            scale(0.95);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform:
+            translateY(0)
+            scale(1);
     }
 }
 
-/* Mobile */
 
-@media (max-width: 600px) {
-
-    h1 {
-        font-size: 38px;
-    }
-
-    .message {
-        font-size: 16px;
-    }
-
-    .welcome {
-        padding: 40px 20px;
-    }
-}
 /* =========================
    MEMORIES PAGE
 ========================= */
@@ -203,16 +220,19 @@ button:hover {
     animation: appear 1.2s ease;
 }
 
+
 .memories-page h1 {
     font-size: 52px;
     margin-bottom: 15px;
 }
+
 
 .memory-intro {
     font-size: 18px;
     margin-bottom: 35px;
     opacity: 0.9;
 }
+
 
 .memory-container {
     display: grid;
@@ -223,6 +243,7 @@ button:hover {
 
     margin-bottom: 35px;
 }
+
 
 .memory-card {
     padding: 20px;
@@ -241,12 +262,16 @@ button:hover {
     transition: 0.4s;
 }
 
+
 .memory-card:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform:
+        translateY(-10px)
+        scale(1.02);
 
     box-shadow:
         0 20px 45px rgba(255, 255, 255, 0.25);
 }
+
 
 .photo-placeholder {
     height: 220px;
@@ -254,6 +279,7 @@ button:hover {
     border-radius: 20px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -267,13 +293,34 @@ button:hover {
             rgba(255,255,255,0.35),
             rgba(255,105,180,0.25)
         );
+
+    overflow: hidden;
 }
+
+
+.photo-placeholder img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+
+.memory-card:hover
+.photo-placeholder img {
+    transform: scale(1.08);
+}
+
 
 .memory-card h2 {
     font-size: 22px;
-
     margin-bottom: 12px;
 }
+
 
 .memory-card p {
     font-size: 15px;
@@ -284,19 +331,6 @@ button:hover {
 }
 
 
-/* Mobile */
-
-@media (max-width: 800px) {
-
-    .memory-container {
-        grid-template-columns: 1fr;
-    }
-
-    .memories-page h1 {
-        font-size: 40px;
-    }
-
-}
 /* =========================
    LOVE LETTER PAGE
 ========================= */
@@ -306,12 +340,14 @@ button:hover {
     max-width: 800px;
 
     position: relative;
+
     z-index: 2;
 
     text-align: center;
 
     animation: appear 1.2s ease;
 }
+
 
 .letter-card {
     padding: 45px 35px;
@@ -328,6 +364,7 @@ button:hover {
         0 20px 55px rgba(100, 0, 50, 0.35);
 }
 
+
 .big-heart {
     font-size: 75px;
 
@@ -336,15 +373,17 @@ button:hover {
     animation: heartbeat 1.3s infinite;
 }
 
+
 .letter-card h1 {
     font-size: 45px;
-
     margin-bottom: 30px;
 }
+
 
 .letter-card h1 span {
     color: #fff0f7;
 }
+
 
 .letter-text {
     min-height: 230px;
@@ -361,6 +400,422 @@ button:hover {
 
     margin-bottom: 30px;
 }
+
+
+/* =========================
+   FINAL SURPRISE PAGE
+========================= */
+
+.final-page {
+    width: 92%;
+    max-width: 800px;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 5;
+
+    padding: 50px 20px;
+
+    animation: appear 1.5s ease;
+}
+
+
+.final-card {
+    padding: 50px 35px;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    border-radius: 35px;
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 70px rgba(100, 0, 50, 0.4);
+}
+
+
+.final-heart {
+    font-size: 90px;
+
+    animation: heartbeat 1.2s infinite;
+
+    margin-bottom: 10px;
+}
+
+
+.final-small {
+    font-size: 17px;
+
+    opacity: 0.9;
+
+    margin-bottom: 15px;
+}
+
+
+.final-card h1 {
+    font-size: 55px;
+    margin-bottom: 5px;
+}
+
+
+.final-card h2 {
+    font-size: 35px;
+
+    color: #ffe5f1;
+
+    margin-bottom: 20px;
+}
+
+
+.cake {
+    font-size: 85px;
+
+    margin: 15px 0;
+
+    animation: cakeBounce 2s infinite;
+}
+
+
+.final-message {
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    margin: 20px 0;
+}
+
+
+.forever {
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+
+.love-line {
+    font-size: 25px;
+
+    font-weight: bold;
+
+    margin: 25px 0;
+
+    color: #fff0f7;
+}
+
+
+/* =========================
+   SPARKLES
+========================= */
+
+.sparkles span {
+    position: absolute;
+
+    font-size: 25px;
+
+    animation: sparkle 3s infinite;
+
+    pointer-events: none;
+}
+
+
+.sparkles span:nth-child(1) {
+    top: 15%;
+    left: 15%;
+}
+
+
+.sparkles span:nth-child(2) {
+    top: 25%;
+    right: 15%;
+
+    animation-delay: 1s;
+}
+
+
+.sparkles span:nth-child(3) {
+    bottom: 20%;
+    left: 20%;
+
+    animation-delay: 1.5s;
+}
+
+
+.sparkles span:nth-child(4) {
+    bottom: 15%;
+    right: 20%;
+
+    animation-delay: 2s;
+}
+
+
+.sparkles span:nth-child(5) {
+    top: 10%;
+    left: 50%;
+
+    animation-delay: 0.5s;
+}
+
+
+@keyframes sparkle {
+
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.4);
+    }
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-btn {
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    z-index: 99999;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.15);
+
+    transition: 0.3s;
+
+    display: block;
+
+    visibility: visible;
+
+    opacity: 1;
+}
+
+
+.music-btn:hover {
+    transform: scale(1.08);
+
+    background: rgba(255, 255, 255, 0.4);
+}
+
+
+/* =========================
+   NEXT BUTTON
+   FIXED FOR PHONE + PC
+========================= */
+
+.next-btn,
+.next-button {
+
+    display: inline-block !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    text-decoration: none !important;
+
+    margin: 25px auto 0 !important;
+
+    padding: 14px 30px !important;
+
+    border: none !important;
+
+    border-radius: 30px !important;
+
+    background:
+        linear-gradient(
+            45deg,
+            #e91e63,
+            #ff4081
+        ) !important;
+
+    color: white !important;
+
+    font-size: 16px !important;
+
+    font-weight: bold !important;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(233, 30, 99, 0.35) !important;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    position: relative !important;
+
+    z-index: 9999 !important;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.next-btn:hover,
+.next-button:hover {
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 10px 25px rgba(233, 30, 99, 0.45) !important;
+}
+
+
+/* =========================
+   DO YOU LOVE ME PAGE
+========================= */
+
+.love-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+}
+
+
+.love-card {
+
+    width: 90%;
+
+    max-width: 600px;
+
+    padding: 45px 25px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+.love-card h1 {
+
+    font-size: 42px;
+
+    margin: 15px 0;
+}
+
+
+.love-card h1 span {
+    color: #e91e63;
+}
+
+
+.love-message {
+
+    font-size: 20px;
+
+    margin: 20px 0 35px;
+}
+
+
+.love-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 25px;
+
+    min-height: 70px;
+}
+
+
+.yes-button,
+.no-button {
+
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 30px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.yes-button {
+
+    background: #e91e63;
+
+    color: white;
+
+    box-shadow:
+        0 5px 15px rgba(233, 30, 99, 0.4);
+}
+
+
+.yes-button:hover {
+    transform: scale(1.1);
+}
+
+
+.no-button {
+
+    background: white;
+
+    color: #e91e63;
+}
+
+
+/* =========================
+   HEARTBEAT
+========================= */
 
 @keyframes heartbeat {
 
@@ -383,492 +838,262 @@ button:hover {
     100% {
         transform: scale(1);
     }
-
 }
 
-@media (max-width: 600px) {
 
-    .letter-card {
-        padding: 35px 20px;
+/* =========================
+   DESKTOP / TABLET
+========================= */
+
+@media (max-width: 800px) {
+
+    .memory-container {
+        grid-template-columns: 1fr;
     }
 
-    .letter-card h1 {
-        font-size: 35px;
+    .memories-page h1 {
+        font-size: 40px;
+    }
+}
+
+
+/* =========================
+   MOBILE PHONE
+========================= */
+
+@media screen and (max-width: 600px) {
+
+    body {
+        width: 100%;
+        min-height: 100vh;
+
+        padding: 20px 0;
+
+        align-items: center;
     }
 
-    .letter-text {
+
+    .welcome {
+
+        width: 92%;
+
+        padding: 40px 20px;
+
+        margin: 20px auto;
+    }
+
+
+    h1 {
+        font-size: 38px;
+    }
+
+
+    .message {
         font-size: 16px;
     }
 
-}
-/* =========================
-   FINAL SURPRISE PAGE
-========================= */
 
-.final-page {
+    /* NEXT BUTTON MOBILE */
 
-    width: 92%;
+    .next-btn,
+    .next-button {
 
-    max-width: 800px;
+        display: inline-block !important;
 
-    text-align: center;
+        width: auto !important;
 
-    position: relative;
+        max-width: 90% !important;
 
-    z-index: 5;
+        min-width: 170px;
 
-    padding: 50px 20px;
+        padding: 13px 24px !important;
 
-    animation: appear 1.5s ease;
+        margin: 20px auto 0 !important;
 
-}
+        font-size: 15px !important;
 
+        line-height: 1.4;
 
-.final-card {
+        text-align: center;
 
-    padding: 50px 35px;
+        white-space: nowrap;
 
-    background: rgba(255, 255, 255, 0.18);
+        visibility: visible !important;
 
-    border: 1px solid rgba(255, 255, 255, 0.35);
+        opacity: 1 !important;
 
-    border-radius: 35px;
+        position: relative !important;
 
-    backdrop-filter: blur(20px);
-
-    box-shadow:
-
-        0 25px 70px rgba(100, 0, 50, 0.4);
-
-}
-
-
-.final-heart {
-
-    font-size: 90px;
-
-    animation: heartbeat 1.2s infinite;
-
-    margin-bottom: 10px;
-
-}
-
-
-.final-small {
-
-    font-size: 17px;
-
-    opacity: 0.9;
-
-    margin-bottom: 15px;
-
-}
-
-
-.final-card h1 {
-
-    font-size: 55px;
-
-    margin-bottom: 5px;
-
-}
-
-
-.final-card h2 {
-
-    font-size: 35px;
-
-    color: #ffe5f1;
-
-    margin-bottom: 20px;
-
-}
-
-
-.cake {
-
-    font-size: 85px;
-
-    margin: 15px 0;
-
-    animation: cakeBounce 2s infinite;
-
-}
-
-
-.final-message {
-
-    font-size: 19px;
-
-    line-height: 1.8;
-
-    margin: 20px 0;
-
-}
-
-
-.forever {
-
-    font-size: 17px;
-
-    line-height: 1.8;
-
-    margin-bottom: 25px;
-
-}
-
-
-.love-line {
-
-    font-size: 25px;
-
-    font-weight: bold;
-
-    margin: 25px 0;
-
-    color: #fff0f7;
-
-}
-
-
-@keyframes cakeBounce {
-
-    0%, 100% {
-
-        transform: translateY(0);
-
+        z-index: 99999 !important;
     }
 
-    50% {
 
-        transform: translateY(-12px);
+    /* MUSIC BUTTON MOBILE */
 
+    .music-btn {
+
+        top: 10px;
+
+        right: 10px;
+
+        padding: 10px 15px;
+
+        font-size: 13px;
+
+        z-index: 99999;
     }
 
-}
 
+    /* MEMORIES */
 
-/* Sparkles */
+    .memories-page {
 
-.sparkles span {
+        width: 94%;
 
-    position: absolute;
-
-    font-size: 25px;
-
-    animation: sparkle 3s infinite;
-
-}
-
-
-.sparkles span:nth-child(1) {
-
-    top: 15%;
-
-    left: 15%;
-
-}
-
-
-.sparkles span:nth-child(2) {
-
-    top: 25%;
-
-    right: 15%;
-
-    animation-delay: 1s;
-
-}
-
-
-.sparkles span:nth-child(3) {
-
-    bottom: 20%;
-
-    left: 20%;
-
-    animation-delay: 1.5s;
-
-}
-
-
-.sparkles span:nth-child(4) {
-
-    bottom: 15%;
-
-    right: 20%;
-
-    animation-delay: 2s;
-
-}
-
-
-.sparkles span:nth-child(5) {
-
-    top: 10%;
-
-    left: 50%;
-
-    animation-delay: 0.5s;
-
-}
-
-
-@keyframes sparkle {
-
-    0%, 100% {
-
-        opacity: 0.2;
-
-        transform: scale(0.7);
-
+        padding: 35px 15px;
     }
 
-    50% {
 
-        opacity: 1;
+    .memory-container {
 
-        transform: scale(1.4);
-
+        grid-template-columns: 1fr;
     }
 
-}
+
+    .memories-page h1 {
+
+        font-size: 40px;
+    }
 
 
-/* Final Page Mobile */
+    /* LETTER */
 
-@media (max-width: 600px) {
+    .letter-card {
+
+        padding: 35px 20px;
+    }
+
+
+    .letter-card h1 {
+
+        font-size: 35px;
+    }
+
+
+    .letter-text {
+
+        font-size: 16px;
+    }
+
+
+    /* FINAL PAGE */
 
     .final-card {
 
         padding: 40px 20px;
-
     }
 
 
     .final-card h1 {
 
         font-size: 40px;
-
     }
 
 
     .final-card h2 {
 
         font-size: 28px;
-
     }
 
 
     .final-heart {
 
         font-size: 70px;
-
     }
 
 
     .cake {
 
         font-size: 65px;
-
     }
 
 
     .final-message {
 
         font-size: 16px;
-
     }
 
 
     .love-line {
 
         font-size: 21px;
-
     }
 
-}
-/* =========================
-   MEMORY PHOTOS
-========================= */
 
-.photo-placeholder {
-    overflow: hidden;
-}
-
-.photo-placeholder img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-
-    transition: transform 0.5s ease;
-}
-
-.memory-card:hover .photo-placeholder img {
-    transform: scale(1.08);
-}
-/* =========================
-   MUSIC BUTTON
-========================= */
-
-.music-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-
-    padding: 12px 20px;
-    border: none;
-    border-radius: 30px;
-
-    background: rgba(255, 255, 255, 0.25);
-    color: white;
-
-    font-size: 15px;
-    font-weight: bold;
-
-    backdrop-filter: blur(10px);
-    cursor: pointer;
-
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-
-    transition: 0.3s;
-}
-
-.music-btn:hover {
-    transform: scale(1.08);
-    background: rgba(255, 255, 255, 0.4);
-}
-.next-button {
-    display: inline-block;
-    text-decoration: none;
-    margin-top: 25px;
-    padding: 14px 30px;
-    border-radius: 30px;
-    background: linear-gradient(45deg, #E91E63, #FF4081);
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(233, 30, 99, 0.3);
-    transition: 0.3s;
-}
-
-.next-button:hover {
-    transform: scale(1.05);
-}
-
-/* =========================
-   DO YOU LOVE ME PAGE
-========================= */
-
-.love-page {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.love-card {
-    width: 90%;
-    max-width: 600px;
-    padding: 45px 25px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.18);
-    border-radius: 30px;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-}
-
-.love-card h1 {
-    font-size: 42px;
-    margin: 15px 0;
-}
-
-.love-card h1 span {
-    color: #e91e63;
-}
-
-.love-message {
-    font-size: 20px;
-    margin: 20px 0 35px;
-}
-
-.love-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    min-height: 70px;
-}
-
-.yes-button,
-.no-button {
-    border: none;
-    padding: 15px 30px;
-    border-radius: 30px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.yes-button {
-    background: #e91e63;
-    color: white;
-    box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
-}
-
-.yes-button:hover {
-    transform: scale(1.1);
-}
-
-.no-button {
-    background: white;
-    color: #e91e63;
-}
-
-.big-heart {
-    font-size: 70px;
-    animation: heartbeat 1.2s infinite;
-}
-
-@keyframes heartbeat {
-
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.15);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
+    /* LOVE PAGE */
 
     .love-card h1 {
+
         font-size: 30px;
     }
 
+
     .love-message {
+
         font-size: 17px;
     }
 
+
     .yes-button,
     .no-button {
+
         padding: 13px 24px;
+
         font-size: 16px;
+    }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media screen and (max-width: 380px) {
+
+    .welcome {
+
+        width: 94%;
+
+        padding: 35px 15px;
+    }
+
+
+    h1 {
+
+        font-size: 32px;
+    }
+
+
+    .next-btn,
+    .next-button {
+
+        min-width: 160px;
+
+        padding: 12px 20px !important;
+
+        font-size: 14px !important;
+    }
+
+
+    .music-btn {
+
+        top: 8px;
+
+        right: 8px;
+
+        padding: 8px 12px;
+
+        font-size: 12px;
     }
 }
 
